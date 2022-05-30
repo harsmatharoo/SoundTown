@@ -6,6 +6,12 @@ A fullstack web application developed using JavaScript, Bootstrap, JQuery, Djang
 
 With this application, you can create live music anytime and also create a playlist of your choice using the Django administration.
 
+Intstructions for execution.
+
+Clone this repository with the following unix command:
+
+
+
 ![Screenshot from 2022-05-30 16-53-08](https://user-images.githubusercontent.com/84873873/171065279-aa25f867-5e4e-458f-a5d9-80c4120e7e25.png)
 
 ![Screenshot from 2022-05-30 18-10-05](https://user-images.githubusercontent.com/84873873/171065250-3dda88d0-16b2-42f0-84c5-386e526a62e4.png)
