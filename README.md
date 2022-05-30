@@ -1,6 +1,8 @@
 # SoundTown ©️
 
-Music at your figertips!
+Music at your figertips! SoundTown is the ultimate hub of Music!
+
+A fullstack web application developed using JavaScript, Bootstrap, JQuery, Django (back-end), HTML, and CSS.
 
 With this application, you can create live music anytime and also create a playlist of your choice using the Django administration.
 
