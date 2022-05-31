@@ -11,7 +11,7 @@ Intstructions for execution.
 Clone this repository with the following unix command:
 
 ```bash
-git clone https://github.com/harsmatharoo/SoundTown/music_player
+git clone https://github.com/harsmatharoo/SoundTown/
 ```
 3 Go into main directory
 ```bash
