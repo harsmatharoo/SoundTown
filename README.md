@@ -11,8 +11,10 @@ Intstructions for execution.
 Clone this repository with the following unix command:
 
 4 Create virtual environment with Python 3.8 (you can use any name)
-
+```
 virtualenv env
+```
+
 
 
 5 Run virtual environment
