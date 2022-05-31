@@ -31,6 +31,9 @@ pip install -r requirements.txt
 
 ```
  This may take a while
+```
+First and foremost, the application allows the user to create distinct sounds by pressing any of the listed keys
+```
 
 ![Screenshot from 2022-05-30 16-53-08](https://user-images.githubusercontent.com/84873873/171065279-aa25f867-5e4e-458f-a5d9-80c4120e7e25.png)
 
