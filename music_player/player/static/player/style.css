@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+
+/* used colors */
+:root {
+    --main: rgb(0, 255, 255);
+    --background1: rgb(0, 4, 4);
+    --background2: rgb(0, 9, 9);
+    --app-background1: rgb(0, 90, 100);
+    --app-background2: rgb(0, 53, 60);
+    --song-hover: rgb(0, 40, 40);
+    --scrollbar: rgb(0, 40, 40);
+    --scrollbar-hover: rgb(0, 50, 50);
+}
+.box1{
+  animation-name: loud;
+}
+
+body {
+    background: linear-gradient(90deg, var(--background1) 0%, var(--background2) 100%);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    color: white;
+    user-select: none;
+}
+.success:hover {
+  background: repeating-linear-gradient(
+      175deg,
+      #40E0D0 0px,
+      #CCCCFF 40px,
+      red 80px,
+      green 100px
+    );
+  color: black;
+}
+.success3:hover {
+  background: repeating-linear-gradient(
+      114deg,
+      #10E0D0 0px,
+      #CCCCFF 20px,
+      yellow 80px,
+      green 100px
+    );
+  color: black;
+}
+.success2:hover {
+  background: repeating-linear-gradient(transparent, #55168d 20px), repeating-linear-gradient(1.75turn, transparent, #0c62e8 20px);  
+  color: #7df9ff;
+}
+.background-img {
+    background: url(./images/musichype.jpg) no-repeat center;
+    background-size: auto 100vh;
+}
+
+@keyframes example{
+    20%   {background-color: red;}
+  25%  {background-color: orange;}
+  20%  {background-color: blue;}
+  100% {background-color: maroon;}
+  100% {background: linear-gradient(
+      360deg,
+      red 0px,
+    );;}
+}
+@keyframes loud {
+  25%{
+    transform: scaleY(1);
+  }
+  50%{
+    transform: scaleY(.4);
+  }
+  75%{
+    transform: scaleY(1.2);
+  }
+}
+button {
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	margin-left: 20px;
+	height: 140px;
+	color: black;
+	font-weight: 900;
+	font-size: 50px;
+	border: 6px solid #000000;
+	border-radius: 30px;
+	margin: 0 auto;
+	margin-top: 10px;
+  animation: example 10s infinite;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boxContainer{
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  --boxSize: 50px;
+  --gutter: 2px;
+  width: 300px;
+}
+
+.box{
+  transform: scaleY(.5);
+  height: 100%;
+  width: var(--boxSize);
+  background: #12E2DC;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+}
+
+
+.boxa{
+  transform: scaleY(.4);
+  height: 100%;
+  width: var(--boxSize);
+  background: #E29612;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+}
+
+
+
+
+.boxb{
+  transform: scaleY(.5);
+  height: 100%;
+  width: var(--boxSize);
+  background: #E212b1;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+}
+
+.boxc{
+  
+ display: flex;
+ height: 150%;
+  background: #E21231;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+ 
+}
+
+.boxf{
+  transform: scaleY(.4);
+  height: 100%;
+  width: var(--boxSize);
+  background: #12E243;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+}
+
+.box1{
+  animation-name: loud;
+}
+
+.box2{
+  animation-name: loud;
+}
+
+.box3{
+  animation-name: quiet;
+}
+
+.box4{
+  animation-name: loud;
+}
+
+.box5{
+  animation-name: quiet;
+}
+
+
+.pads{
+    background: lightblue;
+    width: 100%;
+    display: flex;
+}
+
+
+.pads> div {
+height: 100px;
+width: 100px;
+flex: 1;
+}
+.pad1{
+    background: #60d394;
+}
+.pad2{
+    background: #d36060;
+}
+.pad3{
+    background: #c060d3;
+}
+.pad4{
+    background: #d3d160;
+}
+.pad5{
+    background: #6860d9;
+}
+.pad6{
+    background: #b6eb3a ;
+}
+.pad7{
+    background: #b6eb3a ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button {
+  background-color: #235203;
+  border: 20px solid blue;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+
+.app {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+   
+    border-radius: 15px;
+    width: 400px;
+    height: 650px;
+    padding-top: 20px;
+    background: linear-gradient(115deg, var(--app-background1) 0%, var(--app-background2) 100%);
+}
+.pad1{
+    background: #0247fe;
+}
+
+.app__inf {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.inf__cover {
+    margin-bottom: 15px;
+    box-shadow: 12px 12px 16px 0 rgba(0.5, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+}
+
+.inf__title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.inf__author {
+    font-size: 12px;
+    font-variant: small-caps;
+}
+
+html {
+  font-size: 10px;
+  background: red;
+  background-size: cover;
+}
+
+/* body,html {
+  margin: 0;
+  padding: 0;
+  /* font-family: sans-serif;
+} */
+
+.keys {
+margin-top: -200px;
+  display: flex;
+  flex: 2;
+  min-height: 80vh;
+  align-items: center;
+ color: cyan;
+
+}
+
+.key {
+  border: .4rem solid brown;
+  border-radius: 30px;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: cyan;
+  background: #902625;
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  transform: scale(1.6);
+  border-color: #14e1ce;
+  border-radius: 30px;
+  box-shadow: 0 0 100px cyan;
+  color: yellow;
+  
+}
+
+kbd {
+  display: block;
+  font-size: 8rem;
+}
+
+span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+
+

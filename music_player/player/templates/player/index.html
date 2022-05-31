@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+
+<style> 
+h5 {
+  width: 500px;
+  height: 5px;
+  background-color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 3s infinite;
+  font-color: black;
+ 
+  font-size:198px;
+}
+
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 900px;}
+    25%{
+    transform: scaleY(1);
+  }
+  50%{
+    transform: scaleY(.6);
+  }
+  75%{
+    transform: scaleY(1.4);
+  }
+}
+</style>
+
+
+
+
+
+
+
+<head>
+<h5 class="button" id="div3">🎵The Hub Of Music🎵</h5>
+<div style="font-family:cursive; font-size:48px; background-image: url(https://toppng.com/uploads/preview/crazy-cool-backgrounds-11553722874gtrcfgdopn.jpg); margin-right: 164px; margin-left: 200px; margin-bottom: 150px; margin-top: 20px;" class="playing success" > SoundTown⚡©  </div>
+
+<div style="font-family:cursive; font-size:18px; margin-right: 164px; margin-left: 200px; margin-bottom: 90px; margin-top: 2px;" class="success" > Press the following keys to create music. Scroll down to add your own playlist </div>
+  
+  
+</head>
+  
+  
+ 
+ 
+</table>
+    <meta charset="UTF-8">
+    <title>Music player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'player/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'player/style.css' %}">
+    <link rel="stylesheet" href="{% static 'player/controls.css' %}">
+    <link rel="stylesheet" href="{% static 'player/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'player/playlist.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Import list of song objects from django database -->
+    {{ song_objs_list|json_script:'songObjsList' }}
+</head>
+
+<body onload="loadAudio(songId)">
+
+
+   <div class="keys">
+    
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span>Arrow</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span>Melody</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span>Air Horn</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span>Wind Chimes</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span>Cymbal Bright</span>
+    </div>
+   
+  </div>
+
+  <audio data-key="65" src="clap.wav"></audio>
+  <audio data-key="83" src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/arrow.mp3"></audio>
+  <audio data-key="68" src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3"></audio>
+  <audio data-key="70" src="https://cdn.staticcrate.com/stock-hd/audio/soundscrate-air-horn-2.mp3"></audio>
+  <audio data-key="71" src="https://cdn.staticcrate.com/stock-hd/audio/SoundsCrate-Wind_Chimes_B_20.mp3"></audio>
+  <audio data-key="72" src="https://cdn.staticcrate.com/stock-hd/audio/soundscrate-cymbal-bright.mp3"></audio>
+
+
+  <script> // alert("connected");
+
+function playSound(e){
+let audio=document.querySelector(`audio[data-key="${e.keyCode}"]`);
+let key=document.querySelector(`.key[data-key="${e.keyCode}"]`);
+if(!audio) return;
+audio.currentTime = 0;
+audio.play();
+key.classList.add('playing');
+
+}
+
+function removeTransition(e) {
+  if (e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
+}
+
+
+let keys= document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+window.addEventListener('keydown',playSound);
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+    <div class="background-img">
+        <div class="container">
+            <div class="app box1 pad1 success2" oncontextmenu="return false">
+                <section class="app__inf">
+                    <img class="inf__cover" id="cover"></img>
+                    <h1 class="inf__title" id="title"></h1>
+                    <h2 class="inf__author" id="author"></h2>
+                </section>
+                <section class="app__controls">
+                    <div class="app__btns">
+                        <button onclick="previousSong()"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                        <button onclick="startPause()" class="btns__play" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button onclick="nextSong()"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                    </div>
+                    <input type="range" min="0" max="100" value="0" id="slider" oninput="changeDuration(this)">
+                </section>
+                <section class="app__playlist">
+                    <ul>
+                        {% for song, song_id, song_num in numbered_songs %}
+                        <li class="playlist__song" id="{{ song_id }}" onclick="playFromPlaylist('{{ song_id }}')">
+                            <div class="playlist__song-num">{{ song_num }}</div>
+                            <div>
+                                <h3 class="playlist__title">{{ song.title }}</h3>
+                                <h4 class="playlist__author">{{ song.author}}</h4>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'player/player.js' %}"></script>
+    
+  <table style="margin-top: 100px; width:100%; border: 5px solid red;">
+  <tr>
+    <th class="success"style=" font-size:30px;">By: </th>
+    <th class="success3"style="font-size:30px;">Harsahib Matharoo</th>
+   
+  </tr>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+</body>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+</html>

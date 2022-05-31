@@ -1,0 +1,59 @@
+/* playlist style */
+.app__playlist {
+    overflow-y: auto;    
+    border-radius: 10px;
+    width: 370px;
+    height: 200px;
+    background-color: var(--background2);
+    scrollbar-width: thin;
+}
+
+.playlist__song {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    margin: 8px 3px;
+    padding: 2px 0;
+}
+
+
+.playlist__song:hover {
+    border-radius: 10px;
+    background-color: var(--song-hover);
+    cursor: pointer;
+}
+
+.playlist__song-num {
+    display: block;
+    text-align: center;
+    width: 30px;
+    font-size: 10px;
+}
+
+.playlist__title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.playlist__author {
+    margin-top: 2px;
+    font-size: 10px;
+}
+
+.now-playing {
+    color: var(--main);
+}
+
+
+/* scrollbar style */
+.app__playlist::-webkit-scrollbar {
+    width: 8px;
+}
+
+.app__playlist::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+}
+
+.app__playlist::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+}

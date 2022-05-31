@@ -1,0 +1,60 @@
+/* slider style */
+input[type=range] {
+    -webkit-appearance: none;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 350px;
+    height: 10px;
+    background-color: transparent;
+    display: none;
+}
+
+/* display slider only in Mozilla */
+@-moz-document url-prefix() {
+    input[type=range] {
+        display: inline-block;
+    }
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    box-shadow: -180px 0 0 170px var(--background2);
+    border: 1px solid var(--background2);
+    border-radius: 50%;
+    box-sizing: content-box;
+    width: 10px;
+    height: 10px;
+    background: var(--background2);
+    cursor: pointer;
+
+    margin-top: -1px;
+}
+
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    
+    box-shadow: -200px 0 0 190px var(--background2);
+    border: 1px solid var(--background2);
+    border-radius: 50%;
+    box-sizing: content-box;
+    width: 10px;
+    height: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 10px;
+    background: white;
+}
+
+input[type=range]::-moz-range-track {
+    height: 10px;
+    background: white;
+}
