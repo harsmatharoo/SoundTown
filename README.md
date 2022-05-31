@@ -18,7 +18,7 @@ git clone https://github.com/harsmatharoo/SoundTown/
 cd music_player
 ```
 
-4 Create virtual environment with Python 3.8 (you can use any name)
+4 Create virtual environment with Python (latest version would be the best)
 ```bash
 virtualenv env
 ```
