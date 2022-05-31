@@ -33,6 +33,7 @@ env source/bin/activate
  Important! Keep virtual environment running always when you use app. To deactivate venv use:
 
 deactivate
+
 6 With venv kept running install required packages from requirements.txt file
 ```
 pip install -r requirements.txt
@@ -42,6 +43,24 @@ pip install -r requirements.txt
 ```
 First and foremost, the application allows the user to create distinct sounds by pressing any of the listed keys
 ```
+7. Then create a database using the following unix command
+
+```bash
+python3 manage.py migrate
+```
+8 Create account using the createsuperuser unix command
+```bash
+python3 manage.py createsuperuser
+```
+ Enter username, email adress and password that will be used later to log in administration panel
+
+9 Run application on localhost
+```bash
+python3 manage.py runserver
+```
+10 Enter https://127.0.0.1:8000/admin to open the admin window and add any songs one may wish for their playlist.
+
+11 Enter https://127.0.0.1:8000 for the main application
 
 ![Screenshot from 2022-05-30 16-53-08](https://user-images.githubusercontent.com/84873873/171065279-aa25f867-5e4e-458f-a5d9-80c4120e7e25.png)
 
