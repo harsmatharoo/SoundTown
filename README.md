@@ -10,15 +10,23 @@ Intstructions for execution.
 
 Clone this repository with the following unix command:
 
-4 Create virtual environment with Python 3.8 (you can use any name)
+```bash
+git clone https://github.com/harsmatharoo/SoundTown/music_player
 ```
+3 Go into main directory
+```bash
+cd music_player
+```
+
+4 Create virtual environment with Python 3.8 (you can use any name)
+```bash
 virtualenv env
 ```
 
 
 
 5 Run virtual environment
-```
+```bash
 env source/bin/activate
 
 ```
