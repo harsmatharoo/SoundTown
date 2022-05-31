@@ -18,14 +18,18 @@ virtualenv env
 
 
 5 Run virtual environment
-
+```
 env source/bin/activate
+
+```
  Important! Keep virtual environment running always when you use app. To deactivate venv use:
 
 deactivate
 6 With venv kept running install required packages from requirements.txt file
-
+```
 pip install -r requirements.txt
+
+```
  This may take a while
 
 ![Screenshot from 2022-05-30 16-53-08](https://user-images.githubusercontent.com/84873873/171065279-aa25f867-5e4e-458f-a5d9-80c4120e7e25.png)
