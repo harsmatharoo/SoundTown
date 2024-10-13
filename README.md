@@ -1,5 +1,7 @@
 # SoundTown ©️ Music
 
+THE ULTIMATE MUSIC HUB OF 2024
+
 Music at your figertips! SoundTown is the ultimate hub of Music!
 
 A fullstack web application developed using JavaScript, Bootstrap, JQuery, Django (back-end), HTML, and CSS.
